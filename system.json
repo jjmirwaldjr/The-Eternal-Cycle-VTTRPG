@@ -1,40 +1,47 @@
 {
   "name": "eternal-cycle",
   "title": "The Eternal Cycle",
-  "template": "template.json",
   "description": "A system for playing The Eternal Cycle TTRPG in Foundry VTT.",
-  "version": "1.0.0",
-  "compatibility": {
-      "minimum": "10",
-      "verified": "12",
-      "maximum": "12"
-  },
-  "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "languages/en.json"
-        }
-    ],
+  "version": "1.0.1",
   "author": ["Dakera"],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "12.331",
+    "maximum": "12"
+  },
   "esmodules": [
-      "scripts/eternal-cycle.js"
+    "scripts/eternal-cycle.js"
   ],
   "styles": [
-      "styles/eternal-cycle.css"
+    "styles/eternal-cycle.css"
   ],
-  "actorTypes": [
-      "character",
-      "npc",
-      "monster"
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
   ],
-    "packs": [
-      {
-        "name": "items",
-        "label": "Items",
-        "path": "./packs/items.db",
-        "type": "Item",
-        "system": "eternal-cycle"
-      }
-    ]
+  "packs": [
+    {
+      "name": "items",
+      "label": "Items",
+      "path": "packs/items.db",
+      "type": "Item",
+      "system": "eternal-cycle"
+    },
+    {
+      "name": "abilities",
+      "label": "Abilities",
+      "path": "packs/abilities.db",
+      "type": "Item",
+      "system": "eternal-cycle"
+    }
+  ],
+  "manifest": "https://raw.githubusercontent.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/main/system.json",
+  "download": "https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/archive/refs/heads/main.zip",
+  "readme": "https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/blob/main/readme.md",
+  "bugs": "https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/issues",
+  "license": "LICENSE"
 }
+
