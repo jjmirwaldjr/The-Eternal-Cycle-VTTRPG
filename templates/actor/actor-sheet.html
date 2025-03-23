@@ -11,8 +11,9 @@
         </ul>
       </div>
       <div>
-        <h3 class="text-xl font-semibold mb-2">Actions</h3>
-        <button type="button" data-action="add-item" class="px-4 py-2 rounded-xl bg-indigo-700 hover:bg-indigo-500 transition">Add Item</button>
+        <h3 class="text-xl font-semibold mb-2">Rune Deck</h3>
+        <button type="button" data-action="draw-rune" class="px-4 py-2 rounded-xl bg-indigo-700 hover:bg-indigo-500 transition">Draw Rune</button>
+        <button type="button" data-action="reset-deck" class="px-4 py-2 mt-2 rounded-xl bg-red-700 hover:bg-red-500 transition">Reset Deck</button>
       </div>
     </section>
     <div class="mt-6">
@@ -21,5 +22,19 @@
     <footer class="mt-6 text-right">
       <button type="submit" class="px-6 py-2 bg-green-700 rounded-xl hover:bg-green-500 transition">Save Changes</button>
     </footer>
+  
+    <script>
+      Hooks.on("renderActorSheet", (app, html, data) => {
+        html.find('[data-action="draw-rune"]').on("click", () => {
+          const drawnRune = game.eternalCycleRuneDeck.draw(1);
+          ui.notifications.info(`You drew: ${drawnRune}`);
+        });
+  
+        html.find('[data-action="reset-deck"]').on("click", () => {
+          game.eternalCycleRuneDeck.reset();
+          ui.notifications.info("Rune deck has been reset.");
+        });
+      });
+    </script>
   </form>
   

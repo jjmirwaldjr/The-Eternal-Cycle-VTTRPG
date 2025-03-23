@@ -35,6 +35,14 @@ The Eternal Cycle is a custom tabletop RPG system designed for Foundry VTT. It u
 |   |-- item/
 |       |-- item.js
 |       |-- item-sheet.js
+|   |-- system/
+|       |-- rune-deck.js
+|       |-- magic-system.js
+|       |-- deck-hub.js
+|       |-- data-model.js
+|       |-- macros/
+|           |-- reset-deck.js
+|           |-- rune-macro.js
 |-- templates/
 |   |-- actor/
 |       |-- actor-sheet.html
