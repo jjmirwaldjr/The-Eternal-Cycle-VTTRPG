@@ -1,0 +1,55 @@
+{
+    "abilities": [
+      {
+        "name": "Flame Burst",
+        "type": "ability",
+        "img": "icons/magic/fire/flame-explosion-orange.webp",
+        "system": {
+          "description": "A burst of flame dealing 3d6 fire damage.",
+          "runes": ["fire", "fire"],
+          "cost": "2 Mana",
+          "abilityType": "active",
+          "effect": "Deals area damage and ignites targets."
+        }
+      },
+      {
+        "name": "Water Shield",
+        "type": "ability",
+        "img": "icons/magic/water/barrier-bubble.webp",
+        "system": {
+          "description": "Creates a shield of water absorbing 20 damage.",
+          "runes": ["water"],
+          "cost": "1 Mana",
+          "abilityType": "reaction",
+          "effect": "Absorbs incoming damage."
+        }
+      }
+    ],
+    "items": [
+      {
+        "name": "Steel Longsword",
+        "type": "weapon",
+        "img": "icons/weapons/swords/greatsword-steel.webp",
+        "system": {
+          "weight": 4,
+          "price": 30,
+          "damage": "1d10 + STR mod",
+          "range": "melee",
+          "properties": "versatile"
+        }
+      },
+      {
+        "name": "Leather Armor",
+        "type": "armor",
+        "img": "icons/equipment/chest/leather-breastplate-brown.webp",
+        "system": {
+          "weight": 5,
+          "price": 20,
+          "defense": 2,
+          "armorType": "light",
+          "properties": "quiet movement"
+        }
+      }
+    ]
+  }
+  
