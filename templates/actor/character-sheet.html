@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <div class="sheet-content">
+        <!-- Abilities Section -->
+        <div class="abilities-list">
+            {{#each system.abilities as |ability id|}}
+            <div class="ability">
+                <h4>{{id}}</h4>
+                <input type="number" name="system.abilities.{{id}}.value" value="{{ability.value}}" />
+                <div class="ability-mod">{{numberFormat ability.mod sign=true}}</div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Combat Stats Section -->
+        <div class="combat-stats">
+            <h2>Combat Stats</h2>
+            <div class="grid grid-3col">
+                <div class="combat-stat">
+                    <label>Initiative</label>
+                    <input type="number" name="system.combat.initiative.value" value="{{system.combat.initiative.value}}" data-dtype="Number"/>
+                    <span class="stat-mod">Mod: {{system.combat.initiative.mod}}</span>
+                </div>
+                <div class="combat-stat">
+                    <label>Defense</label>
+                    <input type="number" name="system.combat.defense.value" value="{{system.combat.defense.value}}" data-dtype="Number"/>
+                    <span class="stat-mod">Mod: {{system.combat.defense.mod}}</span>
+                </div>
+                <div class="combat-stat">
+                    <label>Armor</label>
+                    <input type="number" name="system.combat.armor.value" value="{{system.combat.armor.value}}" data-dtype="Number"/>
+                </div>
+                <div class="combat-stat">
+                    <label>Speed</label>
+                    <input type="number" name="system.combat.speed.value" value="{{system.combat.speed.value}}" data-dtype="Number"/>
+                </div>
+                <div class="combat-stat">
+                    <label>Wounds</label>
+                    <input type="number" name="system.combat.wounds.value" value="{{system.combat.wounds.value}}" data-dtype="Number"/>
+                    <span>/</span>
+                    <input type="number" name="system.combat.wounds.max" value="{{system.combat.wounds.max}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Section -->
+        <div class="equipment-section">
+            <h2>Equipment</h2>
+            <div class="weapons-slots">
+                <div class="weapon-slot">
+                    <label>Primary Weapon</label>
+                    <div class="item-slot" data-slot="primary"></div>
+                </div>
+                <div class="weapon-slot">
+                    <label>Secondary Weapon</label>
+                    <div class="item-slot" data-slot="secondary"></div>
+                </div>
+            </div>
+
+            <div class="armor-slots grid grid-4col">
+                <div class="armor-slot">
+                    <label>Head</label>
+                    <div class="item-slot" data-slot="head"></div>
+                </div>
+                <div class="armor-slot">
+                    <label>Body</label>
+                    <div class="item-slot" data-slot="body"></div>
+                </div>
+                <div class="armor-slot">
+                    <label>Hands</label>
+                    <div class="item-slot" data-slot="hands"></div>
+                </div>
+                <div class="armor-slot">
+                    <label>Feet</label>
+                    <div class="item-slot" data-slot="feet"></div>
+                </div>
+            </div>
+
+            <div class="accessories-slots grid grid-3col">
+                <div class="accessory-slot">
+                    <label>Ring 1</label>
+                    <div class="item-slot" data-slot="ring1"></div>
+                </div>
+                <div class="accessory-slot">
+                    <label>Ring 2</label>
+                    <div class="item-slot" data-slot="ring2"></div>
+                </div>
+                <div class="accessory-slot">
+                    <label>Amulet</label>
+                    <div class="item-slot" data-slot="amulet"></div>
+                </div>
+            </div>
+
+            <div class="currency-section">
+                <label>Currency</label>
+                <div class="currency-inputs grid grid-3col">
+                    <input type="number" name="system.inventory.currency.gold" value="{{system.inventory.currency.gold}}" data-dtype="Number"/>
+                    <input type="number" name="system.inventory.currency.silver" value="{{system.inventory.currency.silver}}" data-dtype="Number"/>
+                    <input type="number" name="system.inventory.currency.copper" value="{{system.inventory.currency.copper}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Add this section to your character sheet where you want skills to appear -->
+<div class="skills-list">
+  <h3>Skills</h3>
+  {{#each system.skills as |skill id|}}
+  <div class="skill-item" data-skill="{{id}}">
+    <span class="skill-name">{{id}}</span>
+    <span class="skill-ability">({{skill.ability}})</span>
+    <input type="number" name="system.skills.{{id}}.value" value="{{skill.value}}" />
+    <button class="roll-skill" data-skill="{{id}}"><i class="fas fa-dice-d20"></i></button>
+  </div>
+  {{/each}}
+</div>
+</form>

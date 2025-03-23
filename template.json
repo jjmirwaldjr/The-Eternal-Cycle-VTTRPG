@@ -1,0 +1,194 @@
+{
+    "Actor": {
+      "types": [
+        "character",
+        "npc",
+        "monster"
+      ],
+      "templates": {
+        "base": {
+          "health": {
+            "value": 10,
+            "max": 10
+          },
+          "mana": {
+            "value": 10,
+            "max": 10
+          },
+          "attributes": {
+            "strength": {
+              "value": 10,
+              "mod": 0
+            },
+            "dexterity": {
+              "value": 10,
+              "mod": 0
+            },
+            "constitution": {
+              "value": 10,
+              "mod": 0
+            },
+            "intelligence": {
+              "value": 10,
+              "mod": 0
+            },
+            "wisdom": {
+              "value": 10,
+              "mod": 0
+            },
+            "charisma": {
+              "value": 10,
+              "mod": 0
+            }
+          },
+          "combat": {
+            "initiative": {
+              "value": 0,
+              "mod": 0
+            },
+            "defense": {
+              "value": 10,
+              "mod": 0
+            },
+            "armor": {
+              "value": 0
+            },
+            "speed": {
+              "value": 30
+            },
+            "wounds": {
+              "value": 0,
+              "max": 3
+            }
+          },
+          "details": {
+            "level": 1,
+            "experience": 0,
+            "background": "",
+            "alignment": ""
+          },
+          "skills": {
+            "acrobatics": {
+              "value": 0,
+              "attribute": "dexterity"
+            },
+            "arcana": {
+              "value": 0,
+              "attribute": "intelligence"
+            },
+            "athletics": {
+              "value": 0,
+              "attribute": "strength"
+            },
+            "deception": {
+              "value": 0,
+              "attribute": "charisma"
+            },
+            "insight": {
+              "value": 0,
+              "attribute": "wisdom"
+            },
+            "intimidation": {
+              "value": 0,
+              "attribute": "charisma"
+            },
+            "investigation": {
+              "value": 0,
+              "attribute": "intelligence"
+            },
+            "medicine": {
+              "value": 0,
+              "attribute": "wisdom"
+            },
+            "nature": {
+              "value": 0,
+              "attribute": "intelligence"
+            },
+            "perception": {
+              "value": 0,
+              "attribute": "wisdom"
+            },
+            "performance": {
+              "value": 0,
+              "attribute": "charisma"
+            },
+            "persuasion": {
+              "value": 0,
+              "attribute": "charisma"
+            },
+            "religion": {
+              "value": 0,
+              "attribute": "intelligence"
+            },
+            "stealth": {
+              "value": 0,
+              "attribute": "dexterity"
+            },
+            "survival": {
+              "value": 0,
+              "attribute": "wisdom"
+            }
+          },
+          "equipment": {
+            "weapons": {
+              "primary": null,
+              "secondary": null
+            },
+            "armor": {
+              "head": null,
+              "body": null,
+              "hands": null,
+              "feet": null
+            },
+            "accessories": {
+              "ring1": null,
+              "ring2": null,
+              "amulet": null
+            }
+          },
+          "inventory": {
+            "capacity": {
+              "value": 0,
+              "max": 50
+            },
+            "currency": {
+              "gold": 0,
+              "silver": 0,
+              "copper": 0
+            }
+          }
+        }
+      },
+      "character": {
+        "templates": ["base"]
+      },
+      "npc": {
+        "templates": ["base"]
+      },
+      "monster": {
+        "templates": ["base"]
+      }
+    },
+    "Item": {
+      "types": ["weapon", "armor", "ability"],
+      "templates": {
+        "base": {
+          "description": ""
+        }
+      },
+      "weapon": {
+        "templates": ["base"],
+        "damage": "1d100",
+        "range": "melee",
+        "properties": []
+      },
+      "armor": {
+        "templates": ["base"],
+        "defense": 0
+      },
+      "ability": {
+        "templates": ["base"],
+        "level": 1
+      }
+    }
+}

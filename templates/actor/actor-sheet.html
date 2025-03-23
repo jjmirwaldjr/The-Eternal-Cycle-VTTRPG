@@ -1,0 +1,13 @@
+<form class="sheet actor-sheet">
+    <header>
+        <h1>{{actor.name}}</h1>
+    </header>
+    <section>
+        <h3>Stats</h3>
+        <ul>
+            <li>Health: {{actor.system.health}}</li>
+            <li>Mana: {{actor.system.mana}}</li>
+        </ul>
+    </section>
+    {{> "systems/eternal-cycle/templates/actor/parts/actor-items.html"}}
+</form>

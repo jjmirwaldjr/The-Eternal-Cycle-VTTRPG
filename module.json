@@ -1,0 +1,9 @@
+{
+    "id": "eternal-cycle",
+    "title": "The Eternal Cycle",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "12"
+    }
+}

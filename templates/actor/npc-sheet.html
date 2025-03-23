@@ -1,0 +1,27 @@
+<form class="{{cssClass}} npc-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+        </div>
+    </header>
+
+    <section>
+        <h3>Stats</h3>
+        <ul>
+            <li>Health: {{actor.system.health.value}} / {{actor.system.health.max}}</li>
+            <li>Level: {{actor.system.attributes.level.value}}</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Abilities</h3>
+        {{#each actor.system.abilities as |ability key|}}
+        <div class="ability">
+            <label>{{key}}</label>
+            <input type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}"/>
+            <span>Mod: {{ability.mod}}</span>
+        </div>
+        {{/each}}
+    </section>
+</form>

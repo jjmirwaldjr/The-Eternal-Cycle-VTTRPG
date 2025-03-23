@@ -1,0 +1,195 @@
+.eternal-cycle .actor-sheet {
+    min-width: 600px;
+    min-height: 600px;
+}
+
+.eternal-cycle.sheet.item {
+    min-width: 460px;
+    min-height: 400px;
+}
+
+.eternal-cycle .character-sheet {
+    display: flex;
+    flex-direction: column;
+}
+
+.eternal-cycle .sheet-header {
+    flex: 0 0 100px;
+    border-bottom: 2px solid #782e22;
+    padding: 8px;
+}
+
+.eternal-cycle .sheet-header img {
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.eternal-cycle .sheet-tabs {
+    flex: 0 0 30px;
+    border-bottom: 1px solid #AAA;
+    margin-bottom: 10px;
+}
+
+.eternal-cycle .sheet-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.eternal-cycle .tab {
+    padding: 10px;
+}
+
+.eternal-cycle .resource {
+    margin: 10px 0;
+}
+
+.eternal-cycle .resource label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.eternal-cycle .grid {
+      display: grid;
+      gap: 10px;
+      margin: 10px 0;
+      padding: 10px;
+  }
+
+  .eternal-cycle .grid-3col {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .eternal-cycle .grid-2col {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eternal-cycle .attribute {
+      border: 1px solid #999;
+      border-radius: 4px;
+      padding: 5px;
+      text-align: center;
+  }
+
+  .eternal-cycle .resource-label {
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  .eternal-cycle input[type="number"] {
+      width: 60px;
+      text-align: center;
+  }
+
+  .eternal-cycle .attribute-mod {
+      font-size: 0.9em;
+      color: #666;
+  }
+
+  .eternal-cycle .skills-section {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.eternal-cycle .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.eternal-cycle .skill-item {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.eternal-cycle .skill-name {
+    flex: 1;
+    text-transform: capitalize;
+    padding-left: 5px;
+}
+
+.eternal-cycle .skill-attr {
+    color: #666;
+    font-style: italic;
+    margin: 0 8px;
+}
+
+.eternal-cycle .skill-total {
+    min-width: 60px;
+    text-align: right;
+    padding-right: 5px;
+}
+.eternal-cycle .combat-stats {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #782e22;
+    border-radius: 4px;
+}
+
+.eternal-cycle .combat-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.eternal-cycle .combat-stat label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.eternal-cycle .combat-stat input {
+    text-align: center;
+    width: 50px;
+}
+
+.eternal-cycle .stat-mod {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 4px;
+}
+.eternal-cycle .equipment-section {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #782e22;
+    border-radius: 4px;
+}
+
+.eternal-cycle .weapons-slots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.eternal-cycle .item-slot {
+    height: 60px;
+    border: 2px dashed #999;
+    border-radius: 4px;
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.eternal-cycle .armor-slots {
+    margin: 15px 0;
+}
+
+.eternal-cycle .accessories-slots {
+    margin: 15px 0;
+}
+
+.eternal-cycle .currency-section {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.eternal-cycle .currency-inputs input {
+    width: 60px;
+    text-align: center;
+}

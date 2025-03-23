@@ -1,0 +1,40 @@
+{
+  "name": "eternal-cycle",
+  "title": "The Eternal Cycle",
+  "template": "template.json",
+  "description": "A system for playing The Eternal Cycle TTRPG in Foundry VTT.",
+  "version": "1.0.0",
+  "compatibility": {
+      "minimum": "10",
+      "verified": "12",
+      "maximum": "12"
+  },
+  "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        }
+    ],
+  "author": ["Dakera"],
+  "esmodules": [
+      "scripts/eternal-cycle.js"
+  ],
+  "styles": [
+      "styles/eternal-cycle.css"
+  ],
+  "actorTypes": [
+      "character",
+      "npc",
+      "monster"
+  ],
+    "packs": [
+      {
+        "name": "items",
+        "label": "Items",
+        "path": "./packs/items.db",
+        "type": "Item",
+        "system": "eternal-cycle"
+      }
+    ]
+}

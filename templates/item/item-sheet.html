@@ -1,0 +1,163 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+    </nav>
+
+    <section class="sheet-body">
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+          <div class="tab" data-group="primary" data-tab="details">
+              <div class="grid grid-2col">
+                  <div class="resource">
+                      <label>Weight</label>
+                      <input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
+                  </div>
+                  <div class="resource">
+                      <label>Price</label>
+                      <input type="number" name="system.price" value="{{system.price}}" data-dtype="Number"/>
+                  </div>
+              </div>
+
+              {{!-- Weapon-specific properties --}}
+              {{#if (eq item.type "weapon")}}
+              <div class="resource">
+                  <label>Damage</label>
+                  <input type="text" name="system.damage" value="{{system.damage}}"/>
+              </div>
+              <div class="resource">
+                  <label>Range</label>
+                  <input type="text" name="system.range" value="{{system.range}}"/>
+              </div>
+              <div class="resource">
+                  <label>Properties</label>
+                  <input type="text" name="system.properties" value="{{system.properties}}"/>
+              </div>
+              {{/if}}
+
+              {{!-- Armor-specific properties --}}
+              {{#if (eq item.type "armor")}}
+              <div class="resource">
+                  <label>Defense Bonus</label>
+                  <input type="number" name="system.defense" value="{{system.defense}}"/>
+              </div>
+              <div class="resource">
+                  <label>Armor Type</label>
+                  <select name="system.armorType">
+                      <option value="light" {{#if (eq system.armorType "light")}}selected{{/if}}>Light</option>
+                      <option value="medium" {{#if (eq system.armorType "medium")}}selected{{/if}}>Medium</option>
+                      <option value="heavy" {{#if (eq system.armorType "heavy")}}selected{{/if}}>Heavy</option>
+                  </select>
+              </div>
+              <div class="resource">
+                  <label>Properties</label>
+                  <input type="text" name="system.properties" value="{{system.properties}}"/>
+              </div>
+              {{/if}}
+
+              {{!-- Consumable-specific properties --}}
+              {{#if (eq item.type "consumable")}}
+              <div class="resource">
+                  <label>Quantity</label>
+                  <input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+              </div>
+              <div class="resource">
+                  <label>Effect</label>
+                  <input type="text" name="system.effect" value="{{system.effect}}"/>
+              </div>
+              <div class="resource">
+                  <label>Consumable Type</label>
+                  <select name="system.consumableType">
+                      <option value="potion" {{#if (eq system.consumableType "potion")}}selected{{/if}}>Potion</option>
+                      <option value="food" {{#if (eq system.consumableType "food")}}selected{{/if}}>Food</option>
+                      <option value="scroll" {{#if (eq system.consumableType "scroll")}}selected{{/if}}>Scroll</option>
+                      <option value="other" {{#if (eq system.consumableType "other")}}selected{{/if}}>Other</option>
+                  </select>
+              </div>
+              {{/if}}
+
+              {{!-- Treasure-specific properties --}}
+              {{#if (eq item.type "treasure")}}
+              <div class="resource">
+                  <label>Value</label>
+                  <input type="number" name="system.value" value="{{system.value}}" data-dtype="Number"/>
+              </div>
+              <div class="resource">
+                  <label>Rarity</label>
+                  <select name="system.rarity">
+                      <option value="common" {{#if (eq system.rarity "common")}}selected{{/if}}>Common</option>
+                      <option value="uncommon" {{#if (eq system.rarity "uncommon")}}selected{{/if}}>Uncommon</option>
+                      <option value="rare" {{#if (eq system.rarity "rare")}}selected{{/if}}>Rare</option>
+                      <option value="unique" {{#if (eq system.rarity "unique")}}selected{{/if}}>Unique</option>
+                  </select>
+              </div>
+              {{/if}}
+
+              {{!-- Equipment-specific properties --}}
+              {{#if (eq item.type "equipment")}}
+              <div class="resource">
+                  <label>Slot</label>
+                  <select name="system.slot">
+                      <option value="head" {{#if (eq system.slot "head")}}selected{{/if}}>Head</option>
+                      <option value="neck" {{#if (eq system.slot "neck")}}selected{{/if}}>Neck</option>
+                      <option value="body" {{#if (eq system.slot "body")}}selected{{/if}}>Body</option>
+                      <option value="hands" {{#if (eq system.slot "hands")}}selected{{/if}}>Hands</option>
+                      <option value="ring" {{#if (eq system.slot "ring")}}selected{{/if}}>Ring</option>
+                      <option value="feet" {{#if (eq system.slot "feet")}}selected{{/if}}>Feet</option>
+                      <option value="back" {{#if (eq system.slot "back")}}selected{{/if}}>Back</option>
+                      <option value="misc" {{#if (eq system.slot "misc")}}selected{{/if}}>Miscellaneous</option>
+                  </select>
+              </div>
+              <div class="resource">
+                  <label>Effect</label>
+                  <input type="text" name="system.effect" value="{{system.effect}}"/>
+              </div>
+              {{/if}}
+
+              {{!-- Ability-specific properties --}}
+              {{#if (eq item.type "ability")}}
+              <div class="resource">
+                  <label>Ability Type</label>
+                  <select name="system.abilityType">
+                      <option value="passive" {{#if (eq system.abilityType "passive")}}selected{{/if}}>Passive</option>
+                      <option value="active" {{#if (eq system.abilityType "active")}}selected{{/if}}>Active</option>
+                      <option value="reaction" {{#if (eq system.abilityType "reaction")}}selected{{/if}}>Reaction</option>
+                  </select>
+              </div>
+              <div class="resource">
+                  <label>Cost</label>
+                  <input type="text" name="system.cost" value="{{system.cost}}"/>
+              </div>
+              <div class="resource">
+                  <label>Effect</label>
+                  <textarea name="system.effect" rows="3">{{system.effect}}</textarea>
+              </div>
+              {{/if}}
+          </div>
+
+          <div class="form-group">
+              <label>Item Type</label>
+              <select name="type" data-dtype="String">
+                {{#each itemTypes}}
+                  <option value="{{@key}}" {{#if (eq ../document.type @key)}}selected{{/if}}>
+                    {{this}}
+                  </option>
+                {{/each}}
+              </select>
+          </div>
+      </section>
+
+    <footer class="sheet-footer">
+        <button type="submit">Save</button>
+    </footer>
+</form>

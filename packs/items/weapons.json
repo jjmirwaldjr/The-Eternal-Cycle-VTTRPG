@@ -1,0 +1,12 @@
+{
+    "name": "Longsword",
+    "type": "weapon",
+    "img": "icons/weapons/swords/sword-longsword.webp",
+    "system": {
+      "description": "A versatile blade favored by warriors",
+      "damage": "1d8",
+      "weight": 3,
+      "cost": 15
+    }
+  }
+  

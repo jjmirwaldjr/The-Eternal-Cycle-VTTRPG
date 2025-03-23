@@ -1,0 +1,11 @@
+{
+  "ETERNAL-CYCLE": {
+      "ActorTypes": {
+          "character": "Character",
+          "npc": "NPC", 
+          "monster": "Monster"
+      }
+  }
+}
+
+  
