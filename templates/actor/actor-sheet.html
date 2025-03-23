@@ -1,13 +1,40 @@
-<form class="sheet actor-sheet">
-    <header>
-        <h1>{{actor.name}}</h1>
+<form class="sheet actor-sheet p-4 bg-gray-900 text-white rounded-2xl shadow-xl">
+    <header class="mb-4">
+      <h1 class="text-3xl font-bold" data-edit="name">{{actor.name}}</h1>
     </header>
-    <section>
-        <h3>Stats</h3>
-        <ul>
-            <li>Health: {{actor.system.health}}</li>
-            <li>Mana: {{actor.system.mana}}</li>
+    <section class="grid grid-cols-2 gap-4">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Stats</h3>
+        <ul class="space-y-1">
+          <li>Health: <span class="font-mono text-green-400">{{actor.system.health}}</span></li>
+          <li>Mana: <span class="font-mono text-blue-400">{{actor.system.mana}}</span></li>
         </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Rune Deck</h3>
+        <button type="button" data-action="draw-rune" class="px-4 py-2 rounded-xl bg-indigo-700 hover:bg-indigo-500 transition">Draw Rune</button>
+        <button type="button" data-action="reset-deck" class="px-4 py-2 mt-2 rounded-xl bg-red-700 hover:bg-red-500 transition">Reset Deck</button>
+      </div>
     </section>
-    {{> "systems/eternal-cycle/templates/actor/parts/actor-items.html"}}
-</form>
+    <div class="mt-6">
+      {{> "systems/eternal-cycle/templates/actor/parts/actor-items.html"}}
+    </div>
+    <footer class="mt-6 text-right">
+      <button type="submit" class="px-6 py-2 bg-green-700 rounded-xl hover:bg-green-500 transition">Save Changes</button>
+    </footer>
+  
+    <script>
+      Hooks.on("renderActorSheet", (app, html, data) => {
+        html.find('[data-action="draw-rune"]').on("click", () => {
+          const drawnRune = game.eternalCycleRuneDeck.draw(1);
+          ui.notifications.info(`You drew: ${drawnRune}`);
+        });
+  
+        html.find('[data-action="reset-deck"]').on("click", () => {
+          game.eternalCycleRuneDeck.reset();
+          ui.notifications.info("Rune deck has been reset.");
+        });
+      });
+    </script>
+  </form>
+  
