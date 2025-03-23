@@ -5,13 +5,14 @@ The Eternal Cycle is a custom tabletop RPG system designed for Foundry VTT. It u
 
 ## Features
 - Custom Actor and Item sheets (Tailwind styled and upgraded for Foundry V12)
-- Dynamic Rune Deck system for spellcasting
-- Custom Magic System that consumes elemental runes
+- Dynamic Rune Deck system with UI integration and macros
+- Magic system using drawn runes with success/fizzle handling
 - Stamina-based combat mechanics for Warriors
 - Defense Roll system replacing static AC
 - Tiered spellcasting with hybrid rune support
 - Preloaded compendiums for items and abilities
 - Localization support
+- Custom HUD and Token controls for rune interactions
 - Designed for Foundry VTT version **12.331**
 
 ## Installation
@@ -38,7 +39,7 @@ The Eternal Cycle is a custom tabletop RPG system designed for Foundry VTT. It u
 |   |-- system/
 |       |-- rune-deck.js
 |       |-- magic-system.js
-|       |-- deck-hub.js
+|       |-- deck-hud.js
 |       |-- data-model.js
 |       |-- macros/
 |           |-- reset-deck.js
@@ -46,7 +47,6 @@ The Eternal Cycle is a custom tabletop RPG system designed for Foundry VTT. It u
 |-- templates/
 |   |-- actor/
 |       |-- actor-sheet.html
-|       |-- character-sheet.html
 |   |-- item/
 |       |-- item-sheet.html
 |-- packs/
@@ -59,23 +59,23 @@ The Eternal Cycle is a custom tabletop RPG system designed for Foundry VTT. It u
 ```
 
 ## Current Status
-> **Alpha Development (v1.01)** — Foundry compatible and testable. Initial UI enhancements complete.
+> **Alpha Development (v1.01)** — Fully Foundry-compatible with working rune system, magic logic, macros, and HUD integration.
 
 ## Roadmap
-- Additional UI polish (animated sheet transitions)
-- Improved rune management UI
-- Spell creation tools
+- Deck visualization overlays
+- Rune animations and draw effects
+- Advanced spell creation tools
 - Faction system integration
-- Custom compendium browser support
-- Expanded localization and multi-language support
+- Custom compendium browser
+- Localization expansions
 
 ## Change Log
 ### v1.01
-- Initial stable integration with Foundry VTT v12.331
-- Enhanced templates with Tailwind CSS
-- Structured `system.json` for GitHub-hosted manifest and auto-updates
-- Improved file structure consistency
-- Added `languages/en.json` for localization readiness
+- Foundry compatibility (v12.331 verified)
+- Tailwind-styled actor and item sheets
+- Rune deck system and HUD integration
+- Macros auto-generated for GMs
+- Refined directory structure and JS refactoring
 
 ## License
 This system is being developed under open development review. See `LICENSE`.
@@ -85,5 +85,6 @@ Created and maintained by **Jason Mirwald**.
 
 ## Repository
 - GitHub: [https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG](https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG)
-- Issue Tracker: [https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/issues](https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/issues)
+- Issue Tracker: [https://github.com/jjmirwaldjr/The-Eternal-Cycle-VTTRPG/issues)
+
 
